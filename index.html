@@ -10,9 +10,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
   <link rel="manifest" href="/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#7b7b7b">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-config" content="/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
@@ -24,16 +24,46 @@
     <h1 id="main-name">merchduck</h1>
 
     <div class="buttons">
-      <h3>Your brand on anything!</h3>
+      <!-- <h3>Your brand on anything!</h3> -->
+      <h3 onclick="showAbout()">About</h3>
+      <h3>FAQ</h3>
       <a href="mailto:yuji@merchduck.com">
         <h3>Order/Contact</h3>
       </a>
-      <!-- <h3>About</h3>
-        <h3>Pricing</h3>
-        <h3>FAQ</h3>
-        <h3>Order/Contact</h3> -->
     </div>
   </div>
+  <section class="detailed-information">
+    <h2 id="about" style="display:none">We are a screen printing shop and merchandise distributor in Lake Forest, serving cities across the county and beyond. We specialize in screen printing and DTF prints on any apparel, we can also create any merchandise your business needs. </h2>
+    <!-- <h2 id="pricing">Basic pricing for t-shirts with single color and single location. Prices do not include the garments, which start at $3 and can go as high as $30+ depending on quality, style, and application.
+      <table>
+        <tr>
+          <td>1-10</td>
+          <td>11-20</td>
+        </tr>
+      </table>**Please note, orders with more colors, more locations (chest, back, sleeve, etc), larger prints/logos (front left logo, full back, etc), and special types of ink (puff, metallic, glitter, etc) will receive increased pricing. If you are unfamiliar with any of these terms, send us an email and we will help you create your perfect product!</h2> -->
+
+    <dl id="faq" style="display:none">
+
+      <dt>Where is your shop located?</dt>
+      <dd>We print in a garage right off the 5 and Lake Forest (by the Subaru Dealership). Please contact us if you are interested in coming in and feeling different garments and prints.</br>
+      </br>
+      The lack of a physical storefront means the money we save on overhead can be passed onto you.</dd>
+      <dt>Is there a minimum order quantity?</dt>
+      <dd>There is no minimum quantity to make an order, but there is an initial $32 setup fee for all screen printed orders. Each additional color and logo will incur a $12 fee.</dd>
+
+      <dt>Can you deliver my order to _______?</dt>
+      <dd>100+ piece orders can be delivered within Orange County for free and within the Southern California Region for a fee based on mileage.</dd>
+
+      <dt>Do you print all merchandise in house?</dt>
+      <dd>All screen printing and DTF orders will be created in house. We have a working relationship with many suppliers across the country and can produce any merchandise your business needs at an affordable price.</dd>
+
+      <dt>Do you offer special pricing for nonprofit organizations?</dt>
+      <dd>If your organization or event is registered as a 501(c)(3) with the IRS, please mention this in your initial order form with proof and we can offer you a discounted quote. Unfortunately, we cannot offer charity discounts if your organization is not registered as a 501(c)(3).</dd>
+    </dl>
+
+  </section>
+
+  <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
