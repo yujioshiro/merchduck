@@ -15,7 +15,5 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "https://merchduck.com",
-    "display": "standalone",
-    "orientation": "portrait"
+    "display": "standalone"
 }
