@@ -59,7 +59,7 @@ document.onscroll = function() {
   let viewportHeight = window.innerHeight
 
   // tagline fade
-  if (viewportHeight / pageYOffset > 4.5) {
+  if ((viewportHeight / pageYOffset > 4.5) || (pageYOffset <= 0)) {
     tagline.style.opacity = "100%";
   } else if (viewportHeight / pageYOffset < 3.7) {
     tagline.style.opacity = "0%";
