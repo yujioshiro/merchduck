@@ -68,21 +68,21 @@ document.onscroll = function() {
   }
 
   // first info fade
-  if (viewportHeight / pageYOffset > 0.57) {
+  if (viewportHeight / pageYOffset > 0.54) {
     firstQuickInfo.style.opacity = "100%";
-  } else if (viewportHeight / pageYOffset < 0.53) {
+  } else if (viewportHeight / pageYOffset < 0.52) {
     firstQuickInfo.style.opacity = "0%";
   } else {
-    firstQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.53) * 25
+    firstQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.52) * 50
   }
 
   // second info fade
-  if (viewportHeight / pageYOffset > 0.226) {
+  if (viewportHeight / pageYOffset > 0.222) {
     secondQuickInfo.style.opacity = "100%";
-  } else if (viewportHeight / pageYOffset < 0.222) {
+  } else if (viewportHeight / pageYOffset < 0.220) {
     secondQuickInfo.style.opacity = "0%";
   } else {
-    secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.222) * 250
+    secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.220) * 500
   }
 
 }
