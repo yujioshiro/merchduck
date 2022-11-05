@@ -47,7 +47,9 @@ document.onscroll = function() {
   footer.style.transform = "translateY(" + (footerPosition) + "%)";
 
   // Sets the proper landing image Y offset based on the Page Y Offset
-  landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
+  if (pageYOffset > 0) {
+    landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
+  }
 
   if (pageYOffset > 1000) {
     landingImageContainer.style.opacity = "0%";
