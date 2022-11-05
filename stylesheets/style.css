@@ -53,15 +53,19 @@ navbar {
   overflow: hidden;
   top: 0;
   z-index: 2;
-  padding-top: min(20px, 3%);
+  padding-top: min(30px, 3%);
 }
 
 navbuttons {
   width: min(50vw, 300px);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-right: min(3%, 50px);
+  justify-content: flex-end;
+    margin-right: min(3%, 30px);
+}
+
+.navbar-item {
+  margin: 0px min(2vw, 30px);
 }
 
 .navbar-item:hover {
@@ -72,7 +76,7 @@ navbuttons {
 h1 {
   font-size: 2em;
   color: white;
-  margin-left: min(5%, 50px);
+  padding-left: min(3%, 30px);
   font-family: Futura-medium;
 }
 
@@ -102,6 +106,8 @@ h3, a {
 
 .tagline-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   text-align: center;
   width: 100%;
@@ -110,13 +116,10 @@ h3, a {
 }
 
 .tagline {
-  font-size: 4em;
+  font-size: max(3.5vw, 4em);
   color: white;
-  width: 75%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
 }
 
 img {
@@ -128,11 +131,13 @@ img {
 .quick-info {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
   background-color: #ffa626;
   font-size: 2em;
-  padding-top: min(25%, 10em);
-  padding-bottom: min(25%, 10em);
+  height: 50vh;
+  /* padding-top: min(25%, 10em);
+  padding-bottom: min(25%, 10em); */
   padding-right: 2em;
   padding-left: 2em;
 }
