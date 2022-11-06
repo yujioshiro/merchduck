@@ -143,18 +143,18 @@ img {
   align-items: center;
   color: white;
   background-color: #ffa626;
-  font-size: 2em;
+  font-size: max(1.8em, 2.8vw);
   height: 50vh;
   /* padding-top: min(25%, 10em);
   padding-bottom: min(25%, 10em); */
-  padding-right: 2em;
-  padding-left: 2em;
+  padding: 2em;
 }
 
 .content-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   user-select: none;
   -webkit-user-select: none; /*Safari*/
   -moz-user-select: none; /*Firefox*/
