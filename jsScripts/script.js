@@ -18,22 +18,15 @@
 //   setTimeout(showSlides, getRand());
 // }
 
-const merchduckButton = document.getElementById("main-name");
-merchduckButton.onclick = function() {
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-
-}
-
 const landingImageContainer = document.getElementsByClassName("landing-image-container")[0];
 const footer = document.getElementsByTagName("FOOTER")[0];
 const tagline = document.getElementsByClassName("tagline")[0];
 const firstQuickInfo = document.getElementsByClassName("about-info")[0];
 const secondQuickInfo = document.getElementsByClassName("about-info")[1];
-
+const merchduckButton = document.getElementById("main-name");
+const body = document.getElementsByTagName("BODY")[0];
+const contentContainer = document.getElementsByClassName("content-container")[0];
+const faqContainer = document.getElementsByClassName("faq-container")[0];
 
 document.onscroll = function() {
   console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
@@ -47,9 +40,7 @@ document.onscroll = function() {
   footer.style.transform = "translateY(" + (footerPosition) + "%)";
 
   // Sets the proper landing image Y offset based on the Page Y Offset
-  if (pageYOffset > 0) {
     landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
-  }
 
   if (pageYOffset > 1000) {
     landingImageContainer.style.opacity = "0%";
@@ -87,4 +78,37 @@ document.onscroll = function() {
     secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.220) * 500
   }
 
+}
+
+merchduckButton.onclick = async () => {
+  await scrollToTop();
+  await fadeOutContent();
+  await togglePageContent("", "none", "scroll");
+}
+
+const switchToFaq = async () => {
+  await scrollToTop();
+  await fadeOutContent();
+  await togglePageContent("none", "", "hidden");
+}
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+const fadeOutContent = () => {
+  setTimeout(function() {
+    contentContainer.classList.add("fade-out")
+    contentContainer.classList.remove("fade-out")
+  }, 2000);
+
+}
+
+const togglePageContent = (contentContainerValue, faqContainerValue, bodyValue) => {
+  body.style.overflow = bodyValue;
+  contentContainer.style.display = contentContainerValue;
+  faqContainer.style.display = faqContainerValue;
 }
