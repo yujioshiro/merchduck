@@ -27,9 +27,11 @@ const merchduckButton = document.getElementById("main-name");
 const body = document.getElementsByTagName("BODY")[0];
 const contentContainer = document.getElementsByClassName("content-container")[0];
 const faqContainer = document.getElementsByClassName("faq-container")[0];
+const navbar = document.getElementsByTagName("NAVBAR")[0];
+const wordsOnMainPage = document.getElementsByClassName("word-on-main-page");
 
 document.onscroll = function() {
-  console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
+  // console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
 
   // Sets the proper footer Y offset based on the Page Y Offset
   if (pageYOffset > 100) {
@@ -51,33 +53,42 @@ document.onscroll = function() {
   // Fading text as it reaches top of viewportHeight
   let viewportHeight = window.innerHeight
 
-  // tagline fade
-  if ((viewportHeight / pageYOffset > 4.5) || (pageYOffset <= 0)) {
-    tagline.style.opacity = "100%";
-  } else if (viewportHeight / pageYOffset < 3.7) {
-    tagline.style.opacity = "0%";
-  } else {
-    tagline.style.opacity = ((viewportHeight / pageYOffset) - 3.7) * 1.25
-  }
+  // // tagline fade
+  // if ((viewportHeight / pageYOffset > 4.5) || (pageYOffset <= 0)) {
+  //   tagline.style.opacity = "100%";
+  // } else if (viewportHeight / pageYOffset < 3.7) {
+  //   tagline.style.opacity = "0%";
+  // } else {
+  //   tagline.style.opacity = ((viewportHeight / pageYOffset) - 3.7) * 1.25
+  // }
+  //
+  // // first info fade
+  // if (viewportHeight / pageYOffset > 0.54) {
+  //   firstQuickInfo.style.opacity = "100%";
+  // } else if (viewportHeight / pageYOffset < 0.52) {
+  //   firstQuickInfo.style.opacity = "0%";
+  // } else {
+  //   firstQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.52) * 50
+  // }
+  //
+  // // second info fade
+  // if (viewportHeight / pageYOffset > 0.222) {
+  //   secondQuickInfo.style.opacity = "100%";
+  // } else if (viewportHeight / pageYOffset < 0.220) {
+  //   secondQuickInfo.style.opacity = "0%";
+  // } else {
+  //   secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.220) * 500
+  // }
 
-  // first info fade
-  if (viewportHeight / pageYOffset > 0.54) {
-    firstQuickInfo.style.opacity = "100%";
-  } else if (viewportHeight / pageYOffset < 0.52) {
-    firstQuickInfo.style.opacity = "0%";
-  } else {
-    firstQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.52) * 50
+  for (let i = 0; i < wordsOnMainPage.length; i++) {
+    if (wordsOnMainPage[i].getBoundingClientRect().top < navbar.scrollHeight) {
+      wordsOnMainPage[i].style.opacity = "0";
+    } else if (wordsOnMainPage[i].getBoundingClientRect().top > (navbar.scrollHeight + 10)) {
+      wordsOnMainPage[i].style.opacity = "1";
+    } else {
+      wordsOnMainPage[i].style.opacity = (wordsOnMainPage[i].getBoundingClientRect().top - navbar.scrollHeight) / 10;
+    }
   }
-
-  // second info fade
-  if (viewportHeight / pageYOffset > 0.222) {
-    secondQuickInfo.style.opacity = "100%";
-  } else if (viewportHeight / pageYOffset < 0.220) {
-    secondQuickInfo.style.opacity = "0%";
-  } else {
-    secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.220) * 500
-  }
-
 }
 
 merchduckButton.onclick = async () => {
@@ -111,4 +122,9 @@ const togglePageContent = (contentContainerValue, faqContainerValue, bodyValue) 
   body.style.overflow = bodyValue;
   contentContainer.style.display = contentContainerValue;
   faqContainer.style.display = faqContainerValue;
+}
+
+window.onresize = () => {
+  console.log(navbar.scrollHeight)
+
 }
