@@ -152,6 +152,7 @@ img {
   background-color: #ffa626;
   font-size: 1.8em;
   height: 50vh;
+  width: 100%;
   flex-wrap: wrap;
   /* padding-top: min(25%, 10em);
   padding-bottom: min(25%, 10em); */
