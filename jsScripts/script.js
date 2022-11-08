@@ -111,9 +111,12 @@ const scrollToTop = () => {
 }
 
 const fadeOutContent = () => {
+  contentContainer.classList.add("fade-out");
+  faqContainer.classList.add("fade-out");
+
   setTimeout(function() {
-    contentContainer.classList.add("fade-out")
-    contentContainer.classList.remove("fade-out")
+    contentContainer.classList.remove("fade-out");
+    faqContainer.classList.add("fade-out");
   }, 2000);
 
 }

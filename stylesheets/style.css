@@ -90,7 +90,9 @@ h1:hover {
   cursor: pointer;
 }
 
-h2 {
+.about-info-word {
+  display: flex;
+  flex-direction: row;
   font-size: 1.4em;
 }
 
@@ -122,6 +124,8 @@ h3, a {
 }
 
 .tagline {
+  display: flex;
+  flex-direction: row;
   font-size: max(3.5vw, 4em);
   color: white;
   position: absolute;
@@ -140,11 +144,12 @@ img {
 .quick-info {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   color: white;
   background-color: #ffa626;
-  font-size: max(1.8em, 2.8vw);
+  font-size: 1.8em;
   height: 50vh;
+  flex-wrap: wrap;
   /* padding-top: min(25%, 10em);
   padding-bottom: min(25%, 10em); */
   padding: 2em;
