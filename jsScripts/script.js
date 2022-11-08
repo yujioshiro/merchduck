@@ -26,23 +26,26 @@ const secondQuickInfo = document.getElementsByClassName("about-info")[1];
 const merchduckButton = document.getElementById("main-name");
 const body = document.getElementsByTagName("BODY")[0];
 const contentContainer = document.getElementsByClassName("content-container")[0];
+const everythingElseContainer = document.getElementsByClassName("everything-else-container")[0];
 const faqContainer = document.getElementsByClassName("faq-container")[0];
 const navbar = document.getElementsByTagName("NAVBAR")[0];
 const wordsOnMainPage = document.getElementsByClassName("word-on-main-page");
+let pageSwitchFlag = 0;
 
 document.onscroll = function() {
-  // console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
+  console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
+  console.log(body.getBoundingClientRect().top);
 
   // Sets the proper footer Y offset based on the Page Y Offset
-  if (pageYOffset > 100) {
-    footerPosition = 0
+  if (pageYOffset < (contentContainer.scrollHeight / 0.7)) {
+    footerPosition = 100
   } else {
-    footerPosition = 100 - pageYOffset;
+    footerPosition = 0;
   }
-  footer.style.transform = "translateY(" + (footerPosition) + "%)";
+  footer.style.transform = "translateY(" + footerPosition + "%)";
 
   // Sets the proper landing image Y offset based on the Page Y Offset
-    landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
+  landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
 
   if (pageYOffset > 1000) {
     landingImageContainer.style.opacity = "0%";
@@ -51,34 +54,6 @@ document.onscroll = function() {
   }
 
   // Fading text as it reaches top of viewportHeight
-  let viewportHeight = window.innerHeight
-
-  // // tagline fade
-  // if ((viewportHeight / pageYOffset > 4.5) || (pageYOffset <= 0)) {
-  //   tagline.style.opacity = "100%";
-  // } else if (viewportHeight / pageYOffset < 3.7) {
-  //   tagline.style.opacity = "0%";
-  // } else {
-  //   tagline.style.opacity = ((viewportHeight / pageYOffset) - 3.7) * 1.25
-  // }
-  //
-  // // first info fade
-  // if (viewportHeight / pageYOffset > 0.54) {
-  //   firstQuickInfo.style.opacity = "100%";
-  // } else if (viewportHeight / pageYOffset < 0.52) {
-  //   firstQuickInfo.style.opacity = "0%";
-  // } else {
-  //   firstQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.52) * 50
-  // }
-  //
-  // // second info fade
-  // if (viewportHeight / pageYOffset > 0.222) {
-  //   secondQuickInfo.style.opacity = "100%";
-  // } else if (viewportHeight / pageYOffset < 0.220) {
-  //   secondQuickInfo.style.opacity = "0%";
-  // } else {
-  //   secondQuickInfo.style.opacity = ((viewportHeight / pageYOffset) - 0.220) * 500
-  // }
 
   for (let i = 0; i < wordsOnMainPage.length; i++) {
     if (wordsOnMainPage[i].getBoundingClientRect().top < (navbar.scrollHeight / 2)) {
@@ -89,18 +64,32 @@ document.onscroll = function() {
       wordsOnMainPage[i].style.opacity = (wordsOnMainPage[i].getBoundingClientRect().top - (navbar.scrollHeight / 2)) / ((navbar.scrollHeight + 10) - (navbar.scrollHeight / 2));
     }
   }
+
+  // Check for switch flag
+
+
+  if (body.getBoundingClientRect().top == 0) {
+    if (pageSwitchFlag == 1) {
+      setTimeout(function() {
+        fadeOutContent();
+        pageSwitchFlag = 0;
+      }, 100)
+    }
+  }
 }
 
-merchduckButton.onclick = async () => {
-  await scrollToTop();
-  await fadeOutContent();
-  await togglePageContent("", "none", "scroll");
+merchduckButton.onclick = () => {
+  scrollToTop();
+  fadeOutFaq();
 }
 
-const switchToFaq = async () => {
-  await scrollToTop();
-  await fadeOutContent();
-  await togglePageContent("none", "", "hidden");
+const switchToFaq = () => {
+  pageSwitchFlag = 1;
+  scrollToTop();
+  if (body.getBoundingClientRect().top == 0) {
+    fadeOutContent();
+    pageSwitchFlag = 0;
+  }
 }
 
 const scrollToTop = () => {
@@ -111,14 +100,32 @@ const scrollToTop = () => {
 }
 
 const fadeOutContent = () => {
-  contentContainer.classList.add("fade-out");
-  faqContainer.classList.add("fade-out");
+
+  footer.style.transform = "translateY(" + 0 + "%)"
+  footer.style.height = "60px"
+
+  contentContainer.classList.add("fade-out-0-5");
 
   setTimeout(function() {
-    contentContainer.classList.remove("fade-out");
-    faqContainer.classList.add("fade-out");
-  }, 2000);
+    contentContainer.classList.remove("fade-out-0-5");
+    togglePageContent("none", "", "hidden");
+  }, 400);
+}
 
+const fadeOutFaq = () => {
+  faqContainer.classList.add("fade-out-0-5");
+  footer.classList.add("footer-slide-down");
+
+  setTimeout(function() {
+    faqContainer.classList.remove("fade-out-0-5");
+    togglePageContent("", "none", "scroll");
+  }, 400);
+
+  setTimeout(function() {
+    footer.classList.remove("footer-slide-down");
+    footer.style.transform = "translateY(" + 100 + "%)"
+    footer.style.height = "30vh"
+  }, 1000)
 }
 
 const togglePageContent = (contentContainerValue, faqContainerValue, bodyValue) => {
@@ -131,3 +138,9 @@ window.onresize = () => {
   console.log(navbar.scrollHeight)
 
 }
+
+window.onload = () => {
+}
+
+
+history.scrollRestoration = "manual";
