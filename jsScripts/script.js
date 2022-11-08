@@ -81,12 +81,12 @@ document.onscroll = function() {
   // }
 
   for (let i = 0; i < wordsOnMainPage.length; i++) {
-    if (wordsOnMainPage[i].getBoundingClientRect().top < navbar.scrollHeight) {
+    if (wordsOnMainPage[i].getBoundingClientRect().top < (navbar.scrollHeight / 2)) {
       wordsOnMainPage[i].style.opacity = "0";
     } else if (wordsOnMainPage[i].getBoundingClientRect().top > (navbar.scrollHeight + 10)) {
       wordsOnMainPage[i].style.opacity = "1";
     } else {
-      wordsOnMainPage[i].style.opacity = (wordsOnMainPage[i].getBoundingClientRect().top - navbar.scrollHeight) / 10;
+      wordsOnMainPage[i].style.opacity = (wordsOnMainPage[i].getBoundingClientRect().top - (navbar.scrollHeight / 2)) / ((navbar.scrollHeight + 10) - (navbar.scrollHeight / 2));
     }
   }
 }
