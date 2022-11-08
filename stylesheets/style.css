@@ -115,7 +115,7 @@ h3, a {
 .tagline-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   position: relative;
   text-align: center;
   width: 95%;
@@ -126,6 +126,9 @@ h3, a {
 .tagline {
   display: flex;
   flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
   font-size: max(3.5vw, 4em);
   color: white;
   position: absolute;
