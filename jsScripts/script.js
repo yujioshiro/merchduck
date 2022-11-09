@@ -108,7 +108,7 @@ const fadeOutContent = () => {
 
   setTimeout(function() {
     contentContainer.classList.remove("fade-out-0-5");
-    togglePageContent("none", "", "hidden");
+    togglePageContent("hidden", "none", "");
   }, 400);
 }
 
@@ -118,7 +118,7 @@ const fadeOutFaq = () => {
 
   setTimeout(function() {
     faqContainer.classList.remove("fade-out-0-5");
-    togglePageContent("", "none", "scroll");
+    togglePageContent("scroll", "", "none");
   }, 400);
 
   setTimeout(function() {
@@ -128,7 +128,7 @@ const fadeOutFaq = () => {
   }, 1000)
 }
 
-const togglePageContent = (contentContainerValue, faqContainerValue, bodyValue) => {
+const togglePageContent = (bodyValue, contentContainerValue, faqContainerValue) => {
   body.style.overflow = bodyValue;
   contentContainer.style.display = contentContainerValue;
   faqContainer.style.display = faqContainerValue;
