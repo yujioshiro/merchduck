@@ -19,7 +19,7 @@
 // }
 
 const landingImageContainer = document.getElementsByClassName("landing-image-container")[0];
-const footer = document.getElementsByTagName("FOOTER")[0];
+// const footer = document.getElementsByTagName("FOOTER")[0];
 const tagline = document.getElementsByClassName("tagline")[0];
 const firstQuickInfo = document.getElementsByClassName("about-info")[0];
 const secondQuickInfo = document.getElementsByClassName("about-info")[1];
@@ -118,7 +118,7 @@ const fadeOutFaq = () => {
 
   setTimeout(function() {
     faqContainer.classList.remove("fade-out-0-5");
-    togglePageContent("scroll", "", "none");
+    togglePageContent("scroll", "none");
   }, 400);
 
   setTimeout(function() {
