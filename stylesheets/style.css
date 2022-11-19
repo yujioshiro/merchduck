@@ -182,6 +182,9 @@ img {
   user-select: none;
   -webkit-user-select: none; /*Safari*/
   -moz-user-select: none; /*Firefox*/
+
+  backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
 }
 
 .everything-else-container {
