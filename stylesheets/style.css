@@ -91,10 +91,15 @@ h1:hover {
   cursor: pointer;
 }
 
+.tagline-word {
+  padding: 0px 11px;
+
+}
 .about-info-word {
   display: flex;
   flex-direction: row;
   font-size: 1.4em;
+  padding: 0px 5px;
 }
 
 h3, a {

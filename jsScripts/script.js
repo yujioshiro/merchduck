@@ -72,14 +72,12 @@ document.onscroll = function() {
     if (pageSwitchFlag == 1) {
       setTimeout(function() {
         fadeOutContent();
-        pageSwitchFlag = 0;
       }, 100)
     }
   }
 }
 
 merchduckButton.onclick = () => {
-  console.log("merchduck button clicked.")
   scrollToTop();
   if (pageSwitchFlag != 0) {
     fadeOutFaq();
@@ -100,8 +98,6 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   });
-
-  console.log("Successfully scrolled to top of page.")
 }
 
 const fadeOutContent = () => {
@@ -118,9 +114,8 @@ const fadeOutContent = () => {
 }
 
 const fadeOutFaq = () => {
-
   pageSwitchFlag = 1;
-  console.log("fadeOutFaq executed.");
+  
   faqContainer.classList.add("fade-out-0-5");
   // footer.classList.add("footer-slide-down");
 
