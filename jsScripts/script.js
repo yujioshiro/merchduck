@@ -33,8 +33,8 @@ const wordsOnMainPage = document.getElementsByClassName("word-on-main-page");
 let pageSwitchFlag = 0;
 
 document.onscroll = function() {
-  console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
-  console.log(body.getBoundingClientRect().top);
+  // console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
+  // console.log(body.getBoundingClientRect().top);
 
   // // Sets the proper footer Y offset based on the Page Y Offset
   // if (pageYOffset < (contentContainer.scrollHeight / 0.7)) {
@@ -79,8 +79,12 @@ document.onscroll = function() {
 }
 
 merchduckButton.onclick = () => {
+  console.log("merchduck button clicked.")
   scrollToTop();
-  fadeOutFaq();
+  if (pageSwitchFlag != 0) {
+    fadeOutFaq();
+    pageSwitchFlag = 0;
+  }
 }
 
 const switchToFaq = () => {
@@ -88,7 +92,6 @@ const switchToFaq = () => {
   scrollToTop();
   if (body.getBoundingClientRect().top == 0) {
     fadeOutContent();
-    pageSwitchFlag = 0;
   }
 }
 
@@ -97,12 +100,14 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   });
+
+  console.log("Successfully scrolled to top of page.")
 }
 
 const fadeOutContent = () => {
 
-  footer.style.transform = "translateY(" + 0 + "%)"
-  footer.style.height = "60px"
+  // footer.style.transform = "translateY(" + 0 + "%)"
+  // footer.style.height = "60px"
 
   contentContainer.classList.add("fade-out-0-5");
 
@@ -113,19 +118,22 @@ const fadeOutContent = () => {
 }
 
 const fadeOutFaq = () => {
+
+  pageSwitchFlag = 1;
+  console.log("fadeOutFaq executed.");
   faqContainer.classList.add("fade-out-0-5");
-  footer.classList.add("footer-slide-down");
+  // footer.classList.add("footer-slide-down");
 
   setTimeout(function() {
     faqContainer.classList.remove("fade-out-0-5");
-    togglePageContent("scroll", "none");
+    togglePageContent("scroll", "", "none");
   }, 400);
 
-  setTimeout(function() {
-    footer.classList.remove("footer-slide-down");
-    footer.style.transform = "translateY(" + 100 + "%)"
-    footer.style.height = "30vh"
-  }, 1000)
+  // setTimeout(function() {
+  //   // footer.classList.remove("footer-slide-down");
+  //   // footer.style.transform = "translateY(" + 100 + "%)"
+  //   // footer.style.height = "30vh"
+  // }, 1000)
 }
 
 const togglePageContent = (bodyValue, contentContainerValue, faqContainerValue) => {

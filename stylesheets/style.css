@@ -113,6 +113,11 @@ h3, a {
   transform: translateY(0%);
 }
 
+.landing-image {
+  filter: blur(3px);
+  transform: scale(1.1, 1.1);
+}
+
 .tagline-container {
   display: flex;
   justify-content: center;
@@ -183,8 +188,8 @@ img {
   -webkit-user-select: none; /*Safari*/
   -moz-user-select: none; /*Firefox*/
 
-  backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
 }
 
 .everything-else-container {
@@ -235,10 +240,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .faq-section-box {
-  background-color: rgba(251, 251, 251, 0.85);
+  background-color: rgba(251, 251, 251, 0.65);
   width: 70%;
   height: 70%;
   padding: 10px;
