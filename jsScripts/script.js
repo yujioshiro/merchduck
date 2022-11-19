@@ -36,13 +36,13 @@ document.onscroll = function() {
   console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
   console.log(body.getBoundingClientRect().top);
 
-  // Sets the proper footer Y offset based on the Page Y Offset
-  if (pageYOffset < (contentContainer.scrollHeight / 0.7)) {
-    footerPosition = 100
-  } else {
-    footerPosition = 0;
-  }
-  footer.style.transform = "translateY(" + footerPosition + "%)";
+  // // Sets the proper footer Y offset based on the Page Y Offset
+  // if (pageYOffset < (contentContainer.scrollHeight / 0.7)) {
+  //   footerPosition = 100
+  // } else {
+  //   footerPosition = 0;
+  // }
+  // footer.style.transform = "translateY(" + footerPosition + "%)";
 
   // Sets the proper landing image Y offset based on the Page Y Offset
   landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
