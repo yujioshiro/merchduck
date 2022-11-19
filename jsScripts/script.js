@@ -143,4 +143,6 @@ window.onload = () => {
 }
 
 
-history.scrollRestoration = "manual";
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
