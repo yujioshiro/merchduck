@@ -365,3 +365,32 @@ footer {
 @-ms-keyframes fadeOut {
   100% { opacity: 0; }
 }
+
+
+@media (prefers-color-scheme: dark) {
+  * {
+    color: white;
+    /* background-color: #002E3D; */
+  }
+
+  .quick-info {
+
+    background-color: #002E3D;
+    font-size: 1.8em;
+    height: 50vh;
+    width: 100%;
+    flex-wrap: wrap;
+    /* padding-top: min(25%, 10em);
+    padding-bottom: min(25%, 10em); */
+    padding: 2em;
+    opacity: 1;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  h3 {
+    color: white;
+  }
+}
