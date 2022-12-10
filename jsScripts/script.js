@@ -115,7 +115,7 @@ const fadeOutContent = () => {
 
 const fadeOutFaq = () => {
   pageSwitchFlag = 1;
-  
+
   faqContainer.classList.add("fade-out-0-5");
   // footer.classList.add("footer-slide-down");
 
