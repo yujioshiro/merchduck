@@ -2,5 +2,5 @@
     functions = "functions"
     publish = "."
 
-[[plugins]]
-    package = "netlify-plugin-token-hider"
+# [[plugins]]
+#     package = "netlify-plugin-token-hider"
