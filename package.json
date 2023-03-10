@@ -1,0 +1,24 @@
+{
+  "name": "merchduck",
+  "version": "1.0.0",
+  "description": "Hello, reader! This is a website created for my screen printing business. It's also where I practice programming concepts in an environment that actually biaffects sales/profits. The site is created with vanilla HTML/CSS/JS and hosted on Netlify. While I don't want to use this readme as an ad, you can check out what I've built at [merchduck.com](https://merchduck.com).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yujioshiro/merchduck.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yujioshiro/merchduck/issues"
+  },
+  "homepage": "https://github.com/yujioshiro/merchduck#readme",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "qs": "^6.11.1"
+  }
+}
