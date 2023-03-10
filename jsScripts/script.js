@@ -1,3 +1,89 @@
+
+// This method scrolls the document to the top when a user
+// clicks on a page they are already looking at
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Hamburger Animation
+ let topBar = document.getElementById('hamburger-top-bar');
+ let middleBar = document.getElementById('hamburger-middle-bar');
+ let bottomBar = document.getElementById('hamburger-bottom-bar');
+ let hamburgerContainer = document.getElementsByClassName('hamburger-container')[0];
+ let navButtons = document.getElementsByTagName('navbuttons')[0];
+ let navBar = document.getElementsByTagName('navbar')[0];
+
+ let hiddenNavBarItems = document.getElementsByClassName('hidden-navbar-items');
+ let sectionHeadings = document.getElementsByClassName('section-heading-container');
+ let inputs = document.getElementsByTagName("input");
+
+
+ const toggleHamburgerMenu = () => {
+ if (middleBar.classList.contains("rot-45deg")) {
+   topBar.classList.remove("rot45deg");
+   middleBar.classList.remove("rot-45deg");
+   bottomBar.classList.remove("hidden");
+   navButtons.style.maxHeight = null;
+
+  for (i in hiddenNavBarItems) {
+    hiddenNavBarItems.item(i).setAttribute('tabindex', '-1');
+  }
+
+  if (sectionHeadings.length > 0) {
+    for (i in sectionHeadings) {
+      sectionHeadings[i].setAttribute('tabindex', '0');
+    }
+  }
+
+  if (inputs.length > 0) {
+    for (i in inputs) {
+      inputs[i].setAttribute('tabindex', '0');
+      document.getElementById('message-box').setAttribute('tabindex', '0');
+      document.getElementById('order-submit-button').setAttribute('tabindex', '0');
+    }
+  }
+
+
+ } else {
+   bottomBar.classList.add("hidden");
+   topBar.classList.add("rot45deg");
+   middleBar.classList.add("rot-45deg");
+   navButtons.style.maxHeight = navButtons.scrollHeight + 'px';
+
+   for (i in hiddenNavBarItems) {
+    hiddenNavBarItems.item(i).setAttribute('tabindex', '0');
+   }
+
+   if (sectionHeadings.length > 0) {
+    for (i in sectionHeadings) {
+      sectionHeadings[i].setAttribute('tabindex', '-1');
+    }
+   }
+
+   if (inputs.length > 0) {
+    for (i in inputs) {
+      inputs[i].setAttribute('tabindex', '-1');
+      document.getElementById('message-box').setAttribute('tabindex', '-1');
+      document.getElementById('order-submit-button').setAttribute('tabindex', '-1');
+    }
+   }
+ }
+};
+
+
+hamburgerContainer.addEventListener("click",toggleHamburgerMenu);
+hamburgerContainer.addEventListener("keypress",toggleHamburgerMenu);
+
+
+
+// ** Template code for slideslow **
 // let slideIndex = 0;
 // showSlides();
 //
@@ -18,134 +104,60 @@
 //   setTimeout(showSlides, getRand());
 // }
 
-const landingImageContainer = document.getElementsByClassName("landing-image-container")[0];
-// const footer = document.getElementsByTagName("FOOTER")[0];
-const tagline = document.getElementsByClassName("tagline")[0];
-const firstQuickInfo = document.getElementsByClassName("about-info")[0];
-const secondQuickInfo = document.getElementsByClassName("about-info")[1];
-const merchduckButton = document.getElementById("main-name");
-const body = document.getElementsByTagName("BODY")[0];
-const contentContainer = document.getElementsByClassName("content-container")[0];
-const everythingElseContainer = document.getElementsByClassName("everything-else-container")[0];
-const faqContainer = document.getElementsByClassName("faq-container")[0];
-const navbar = document.getElementsByTagName("NAVBAR")[0];
-const wordsOnMainPage = document.getElementsByClassName("word-on-main-page");
-let pageSwitchFlag = 0;
-
-document.onscroll = function() {
-  // console.log(" Y-axis : " + pageYOffset) //shows Y Offset in console
-  // console.log(body.getBoundingClientRect().top);
-
-  // // Sets the proper footer Y offset based on the Page Y Offset
-  // if (pageYOffset < (contentContainer.scrollHeight / 0.7)) {
-  //   footerPosition = 100
-  // } else {
-  //   footerPosition = 0;
-  // }
-  // footer.style.transform = "translateY(" + footerPosition + "%)";
-
-  // Sets the proper landing image Y offset based on the Page Y Offset
-  landingImageContainer.style.transform = "translateY(" + (-pageYOffset / 25) + "%)";
-
-  if (pageYOffset > 1000) {
-    landingImageContainer.style.opacity = "0%";
-  } else {
-    landingImageContainer.style.opacity = "100%";
-  }
-
-  // Fading text as it reaches top of viewportHeight
-
-  for (let i = 0; i < wordsOnMainPage.length; i++) {
-    if (wordsOnMainPage[i].getBoundingClientRect().top < (navbar.scrollHeight / 2)) {
-      wordsOnMainPage[i].style.opacity = "0";
-    } else if (wordsOnMainPage[i].getBoundingClientRect().top > (navbar.scrollHeight + 10)) {
-      wordsOnMainPage[i].style.opacity = "1";
-    } else {
-      wordsOnMainPage[i].style.opacity = (wordsOnMainPage[i].getBoundingClientRect().top - (navbar.scrollHeight / 2)) / ((navbar.scrollHeight + 10) - (navbar.scrollHeight / 2));
-    }
-  }
-
-  // Check for switch flag
 
 
-  if (body.getBoundingClientRect().top == 0) {
-    if (pageSwitchFlag == 1) {
-      setTimeout(function() {
-        fadeOutContent();
-      }, 100)
-    }
-  }
-}
 
-merchduckButton.onclick = () => {
-  scrollToTop();
-  if (pageSwitchFlag != 0) {
-    fadeOutFaq();
-    pageSwitchFlag = 0;
-  }
-}
+// ** Code for faq switching on main page **
+// (This code is no longer needed with new pages)
+// merchduckButton.onclick = () => {
+//   scrollToTop();
+//   if (pageSwitchFlag != 0) {
+//     fadeOutFaq();
+//     pageSwitchFlag = 0;
+//   }
+// }
 
-const switchToFaq = () => {
-  pageSwitchFlag = 1;
-  scrollToTop();
-  if (body.getBoundingClientRect().top == 0) {
-    fadeOutContent();
-  }
-}
+// const switchToFaq = () => {
+//   pageSwitchFlag = 1;
+//   scrollToTop();
+//   if (body.getBoundingClientRect().top == 0) {
+//     fadeOutContent();
+//   }
+// }
 
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
+// const fadeOutContent = () => {
 
-const fadeOutContent = () => {
+//   // footer.style.transform = "translateY(" + 0 + "%)"
+//   // footer.style.height = "60px"
 
-  // footer.style.transform = "translateY(" + 0 + "%)"
-  // footer.style.height = "60px"
+//   contentContainer.classList.add("fade-out-0-5");
 
-  contentContainer.classList.add("fade-out-0-5");
+//   setTimeout(function() {
+//     contentContainer.classList.remove("fade-out-0-5");
+//     togglePageContent("hidden", "none", "");
+//   }, 400);
+// }
 
-  setTimeout(function() {
-    contentContainer.classList.remove("fade-out-0-5");
-    togglePageContent("hidden", "none", "");
-  }, 400);
-}
+// const fadeOutFaq = () => {
+//   pageSwitchFlag = 1;
 
-const fadeOutFaq = () => {
-  pageSwitchFlag = 1;
+//   faqContainer.classList.add("fade-out-0-5");
+//   // footer.classList.add("footer-slide-down");
 
-  faqContainer.classList.add("fade-out-0-5");
-  // footer.classList.add("footer-slide-down");
+//   setTimeout(function() {
+//     faqContainer.classList.remove("fade-out-0-5");
+//     togglePageContent("scroll", "", "none");
+//   }, 400);
 
-  setTimeout(function() {
-    faqContainer.classList.remove("fade-out-0-5");
-    togglePageContent("scroll", "", "none");
-  }, 400);
+//   // setTimeout(function() {
+//   //   // footer.classList.remove("footer-slide-down");
+//   //   // footer.style.transform = "translateY(" + 100 + "%)"
+//   //   // footer.style.height = "30vh"
+//   // }, 1000)
+// }
 
-  // setTimeout(function() {
-  //   // footer.classList.remove("footer-slide-down");
-  //   // footer.style.transform = "translateY(" + 100 + "%)"
-  //   // footer.style.height = "30vh"
-  // }, 1000)
-}
-
-const togglePageContent = (bodyValue, contentContainerValue, faqContainerValue) => {
-  body.style.overflow = bodyValue;
-  contentContainer.style.display = contentContainerValue;
-  faqContainer.style.display = faqContainerValue;
-}
-
-window.onresize = () => {
-  console.log(navbar.scrollHeight)
-
-}
-
-window.onload = () => {
-}
-
-
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
+// const togglePageContent = (bodyValue, contentContainerValue, faqContainerValue) => {
+//   body.style.overflow = bodyValue;
+//   contentContainer.style.display = contentContainerValue;
+//   faqContainer.style.display = faqContainerValue;
+// }
