@@ -130,8 +130,6 @@ hamburgerContainer.addEventListener("keypress",toggleHamburgerMenu);
 //   // footer.style.transform = "translateY(" + 0 + "%)"
 //   // footer.style.height = "60px"
 
-//   contentContainer.classList.add("fade-out-0-5");
-
 //   setTimeout(function() {
 //     contentContainer.classList.remove("fade-out-0-5");
 //     togglePageContent("hidden", "none", "");
