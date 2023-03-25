@@ -76,6 +76,10 @@
     align-items: baseline;
   }
 
+  ol > li > a {
+    text-decoration: underline;
+  }
+
   @media only screen and (min-width: 600px) {
     .information-section-container {
       width: 580px;
