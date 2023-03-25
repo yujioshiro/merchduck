@@ -55,7 +55,7 @@ input:focus, textarea:focus, button:focus {
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
     min-height: 8em;
 }
 
