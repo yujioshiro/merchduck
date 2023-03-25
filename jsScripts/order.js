@@ -18,7 +18,7 @@ fetch('../.netlify/functions/token-hider?' + params.toString())
     // ...other uses of the data obtained using Netlify token-hider
   })
   .catch((error) => {
-    console.error('Error:');
+    console.error('**********Error********** ' + error);
   });
 
 

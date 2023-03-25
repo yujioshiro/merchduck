@@ -1,5 +1,18 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: acumin-pro, Futura-medium, Futura, sans-serif;
+  font-weight: 200;
+  color: var(--main-font-color);
+  box-sizing: border-box;
+}
+
 @import url("https://p.typekit.net/p.css?s=1&k=mjb1miu&ht=tk&f=26062&a=121596310&app=typekit&e=css");
 
+/* Import acumin-pro font for all text inside website */
 @font-face {
   font-family: "acumin-pro";
   src: url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
@@ -13,30 +26,19 @@
   font-family: "acumin-pro", sans-serif;
 }
 
+/* Set color variables for all text and background color inside website */
 :root, :before, :after{
-  --main-font-color: rgb(35, 35, 35);
-  --main-background-color: rgba(255, 252, 228, 1); 
+  --main-font-color: rgba(35,35,35,1);
+  --main-background-color: rgba(255,248,236,1);
+  --main-base-color: rgba(252,176,63, 1);
 }
-
-/* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-family: acumin-pro, Futura-medium, Futura, sans-serif;
-  font-weight: 200;
-  color: var(--main-font-color);
-  box-sizing: border-box;
-}
-
 
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:rgba(255, 252, 228, 1);
+  background-color: var(--main-background-color);
   overflow-x: hidden;
 }
 
@@ -55,148 +57,147 @@ a {
   text-decoration: none;
 }
 
-navbar h1 {
-  font-size: 38px;
-  font-family: Futura-medium, Futura, sans-serif;
-}
-
-navbuttons > h3, 
-navbuttons > a {
-  font-size: 1.4em;
-  text-decoration: none;
-  margin-bottom: 7px;
-}
-
-navbar {
+nav {
   width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 999;
+  text-decoration: none;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-background-color);
+
+  transition: background-color 2s;
 }
 
-img {
+.mobile-navbar-visible {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0px clamp(12px,3vw,22px) 3px clamp(12px,3vw,22px);
+}
+
+.navbar-right {
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  width: 100%;
+  max-height: 0;
   overflow: hidden;
-  object-fit: cover;
+  transition: max-height 0.3s ease-in-out;
 }
 
-@media only screen and (min-width: 600px) {
+.navbar-left, .navbar-right {
+  text-decoration: none;
+  list-style: none;
+}
 
-  navbar {
-    display: flex;
+.navbar-left {
+  font-size: clamp(30px, 2.5em, 35px);
+}
+
+#main-name {
+  font-family: Futura, sans-serif;
+}
+
+.hidden-navbar-items {
+  margin-bottom: 10px;
+  margin-right: clamp(15px, 3vw, 25px);
+  font-size: clamp(20px, 1.4em, 25px);
+}
+
+.mobile-half-height-picture {
+  height: 40vh;
+}
+
+.first-content-after-navbar {
+  margin-top: 53px;
+}
+
+/* Hamburger Menu CSS */
+  
+ul.hamburger li {
+  height: 4px;
+  background: var(--main-font-color);
+  content: "";
+  position: relative;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger > li {
+  list-style-type: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.rot45deg {
+  transform: rotate(45deg);
+  top: 10px !important;
+}
+
+.rot-45deg {
+  transform: rotate(-45deg);
+}
+
+ul.hamburger {
+  display: block;
+}
+ul.hamburger li:nth-child(1) {
+  top: 0;
+}
+ul.hamburger li:nth-child(2) {
+  top: 5px;
+}
+ul.hamburger li:nth-child(3) {
+  top: 10px;
+}
+
+.hamburger-container {
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  float: right;
+}
+
+
+
+/* breakpoint for desktop */
+@media only screen and (min-width: 1024px) {
+
+  nav {
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items:flex-end;
-    padding: clamp(10px, 4vh, 18px) clamp(25px, 7vw, 35px);
+    align-items: baseline;
+    padding: clamp(10px, 4vh, 12px) clamp(15px, 7vw, 25px);
+
+    transition: background-color 2s;
+  }
+
+  .mobile-navbar-visible {
+    padding: 0px clamp(12px,3vw,22px) 3px clamp(12px,3vw,22px);
+  }
+
+  .navbar-left, .navbar-right {
+    display: flex;
+    flex-flow: row nowrap;
+    text-decoration: none;
+    list-style: none;
+    overflow: visible;
+  }
+
+  .navbar-right {
+    min-height: 30px;
+    width: 250px;
+    justify-content: space-between;
   }
 
   .hamburger-container {
     display: none;
   }
-
-  navbuttons {
-    width: clamp(120px, 25vw, 180px);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-  }
-
-  img {
-    min-height: 105vh;
-  }
 }
-
-@media only screen and (max-width: 599px) {
-  navbar {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-    clear: both;
-  padding: 1vh 5vw;
-  background-color: var(--main-background-color);
-
-  }
-  
-  #mobile-navbar-left {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  navbuttons {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-end;
-    width: 100%;
-    
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-
-  .navbar-item {
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none; /*Safari*/
-    -moz-user-select: none; /*Firefox*/
-  }
-  
-  img {
-    min-height: 65vh;
-  }
-
-  .mobile-half-height-picture {
-    height: 40vh;
-  }
-  
-  /* Hamburger CSS */
-  
-  ul.hamburger li {
-    height: 4px;
-    background: var(--main-font-color);
-    content: "";
-    position: relative;
-    transition: 0.25s ease-in-out;
-  }
-
-  .hamburger > li {
-    list-style-type: none;
-  }
-  
-  .hidden {
-    opacity: 0;
-  }
-  
-  .rot45deg {
-    transform: rotate(45deg);
-    top: 10px !important;
-  }
-  
-  .rot-45deg {
-    transform: rotate(-45deg);
-  }
-  
-  ul.hamburger {
-    display: block;
-  }
-  ul.hamburger li:nth-child(1) {
-    top: 0;
-  }
-  ul.hamburger li:nth-child(2) {
-    top: 5px;
-  }
-  ul.hamburger li:nth-child(3) {
-    top: 10px;
-  }
-  
-  .hamburger-container {
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
-    float: right;
-  }
-  
-}
-

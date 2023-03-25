@@ -18,5 +18,5 @@
 //   setTimeout(showSlides, getRand());
 // }
 
-const merchduckButton = document.getElementById("main-name");
-merchduckButton.onclick = function() {window.location.href = "../index.html";}
+// const merchduckButton = document.getElementById("main-name");
+// merchduckButton.onclick = function() {window.location.href = "../index.html";}

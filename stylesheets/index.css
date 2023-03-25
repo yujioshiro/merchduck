@@ -1,6 +1,75 @@
+:root, :before, :after{
+  --main-font-color: rgba(35,35,35,1);
+  --main-background-color: rgba(255,248,236,1);
+  --main-base-color: rgba(252,176,63, 1);
+}
 
-.primary-word, .secondary-word {
-  padding: 0px 0.1em;
+.major-sections {
+  width: 100vw;
+  height: 85vh;
+  background-size: cover;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.outline-button, .solid-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  padding-bottom: 3px;
+}
+
+.outline-button {
+  background-color: transparent;
+  backdrop-filter:blur(3px);
+  border: 2px solid var(--main-base-color);
+}
+
+.solid-button {
+  background-color: var(--main-base-color);
+}
+
+#hero-section {
+  background-image: url(../assets/homepage-images/merchduck_hoodie.webp);
+  background-position: center;
+}
+
+#hero-section-inner-container {
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 19%;
+}
+
+#h1-container {
+  display: grid;
+}
+
+h1, #h1-shadow {
+  font-size: clamp(60px, 4rem, 80px);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 3;
+}
+
+#h1-shadow {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--main-base-color);
+  margin-top: 2px;
+  margin-left: 2px;
+  z-index: 0;
+}
+
+h2 {
+  font-size: 25px;
 }
 
 .content-container {
@@ -12,78 +81,185 @@
 
   user-select: none;
   -webkit-user-select: none; /*Safari*/
-  -moz-user-select: none; /*Firefox*/
+  /* -moz-user-select: none; Firefox */
 
   /* backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px); */
 }
 
-@media only screen and (max-width: 599px) {
-  .desktop-taglines {
-    display: none;
-  }
-  
-  .mobile-taglines {
-    width: 100vw;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 20vh;
-  }
-
-.primary-tagline, .secondary-tagline {
+#hero-lower-buttons {
+  /* width: 270px; */
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+  /* justify-content: space-between; */
   justify-content: center;
-  font-size: max(2vw, 1.8em);
-  margin: 10%;
-}
+
 }
 
- @media only screen and (min-width: 600px) {
+#services-section {
+  background-image: url(../assets/homepage-images/TO_Concrete_Cutting_HeatherT_Black_Print.webp);
+  background-position: right;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+}
 
-  .desktop-taglines {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    position: absolute;
-    user-select: none;
-    -webkit-user-select: none; /*Safari*/
-    -moz-user-select: none; /*Firefox*/
-    z-index: 2;
+#faq-section {
+  background-image: url(../assets/homepage-images/HouseLA_DAO_Screens.webp);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#order-process-container {
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 10vw;
+  border-radius: 15px;
+  padding: 15px;
+  padding-bottom: 23px;
+}
+
+ol {
+  margin-bottom: 15px;
+}
+
+ol > li {
+  list-style-position: inside;
+  padding-top: 10px;
+}
+
+ol > li > a {
+  text-decoration: underline;
+}
+
+#more-work-gallery {
+  height: 80vh;
+  background-image: url(../assets/homepage-images/HouseLA_DAO_Shirt.webp);
+  background-position: center;
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 3px;
+}
+
+footer > .solid-button {
+  display: none;
+}
+
+.brand-logo-container {
+  max-height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.brand-logo-container > a {
+  max-height: inherit;
+}
+
+.brand-logos {
+  max-height: inherit;
+}
+
+@media only screen and (min-width: 530px) {
+    #hero-section {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0;
+
   }
 
-  .mobile-taglines {
-    display: none;
-  }
+  #hero-section-inner-container {
+    max-width: 500px;
+    height: 100%;
 
-  .primary-tagline {
-    width: 80vw;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    font-size: clamp(70px, 5em, 100px);
-    margin-bottom: clamp(20px, 6vh, 30px);
+    padding: 20px;
+
+    /* margin-left: 8px; */
+    margin-right: 25vw;
   }
   
 
-  
-  .secondary-tagline {
-    max-width: 40vw;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(24px, 4em, 27px);
+  #hero-section-inner-container > * {
+    margin: 30px 10px;
+  }
+
+  footer > .solid-button {
+    display: block;
+  }
+
+}
+
+ @media only screen and (min-width: 1024px) {
+  .major-sections {
+    height: 90vh;
+  }
+
+  #hero-section-inner-container {
+    max-width: 600px;
+    margin-right: 20vw;
+  }
+
+  #h1-container {
+    display: grid;
   }
   
+  h1, #h1-shadow {
+    font-size: clamp(80px, 3.5rem, 200px);
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 3;
+  }
+  
+  #h1-shadow {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--main-base-color);
+    margin-top: 3px;
+    margin-left: 3px;
+    z-index: 0;
+  }
+
+  .jiggle {
+    /* position: absolute; */
+  }
+  
+  h2 {
+    font-size: 35px;
+  }
+
+  .outline-button, .solid-button {
+    width: 140px;
+    height: 50px;
+    font-size: 125%;
+  }
+  
+  #hero-lower-buttons {
+    width: 330px;
+  }
+  
+  footer {
+    justify-content: space-around;
+    padding: 3px;
+  }
 
  }
 

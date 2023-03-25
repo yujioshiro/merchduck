@@ -19,56 +19,113 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <!-- necessary meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/about-styles.css">
-  <link rel="stylesheet" href="https://use.typekit.net/mjb1miu.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <meta name="description" content="Here are some questions we get asked regularly.">
+  <meta name="theme-color" content="rgba(255,248,236,1)" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="194x194" href="/favicons/favicon-194x194.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffa626">
-  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="194x194" href="/assets/favicons/favicon-194x194.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#ffa626">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
   <meta name="apple-mobile-web-app-title" content="merchduck">
   <meta name="application-name" content="merchduck">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
 
-  <title>merchduck</title>
+    <!-- Required CSS and JS links -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/faq.css">
+    <script type="text/javascript" src="/jsScripts/script.js" defer></script>
+    <script type="text/javascript" src="/jsScripts/faq.js" defer></script>
+
+  <title>merchduck - frequently asked questions</title>
 </head>
 
 <body>
-  <navbar>
-    <h1 id="main-name" class="navbar-item">merchduck</h1>
-    <navbuttons>
-      <a href="/pages/about.html" class="navbar-item">
-        <h3>services</h3>
-      </a>
-      <a href="/pages/FAQ.html" class="navbar-item">
-        <h3>faq</h3>
-      </a>
-      <a href="mailto:yuji@merchduck.com" class="navbar-item">
-        <h3>order/contact</h3>
-      </a>
-    </nav>
-  </navbar>
-  <div class="landing-image-container">
-    <img src="/homepage-images/10-2500x1667.jpg" style="width:100%;height:95vh;">
-  </div>
-  <div class="about-container">
-    <div class="about-section-box">
-      this is the FAQ page
+  <nav class="main-navbar" aria-labelledby="menu">
+    <div class="mobile-navbar-visible">
+      <ul class="navbar-left">
+        <li><a href="../" id="main-name" tabindex="0">merchduck</a></li>
+      </ul>
+      <div class="hamburger-container" onclick="toggleHamburgerMenu()" onkeypress="toggleHamburgerMenu()" tabindex="0">
+        <ul class="hamburger">
+          <li id="hamburger-top-bar"></li>
+          <li id="hamburger-middle-bar"></li>
+          <li id="hamburger-bottom-bar"></li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="footer-mask">
+    <ul class="navbar-right">
+      <li class="hidden-navbar-items"><a href="../pages/services" tabindex="0">services</a></li>
+      <li class="hidden-navbar-items"><a href="../pages/faq" tabindex="0">faq</a></li>
+      <!-- <li class="hidden-navbar-items"><a href="pages/pricing" tabindex="0">pricing</a></li> -->
+      <li class="hidden-navbar-items"><a href="../pages/order" tabindex="0">order</a></li>
+    </ul>
+  </nav>
 
-  </div>
-  <script type="text/javascript" src="/jsScripts/scriptOther.js"></script>
+  <section class="information-section-container hide-scrollbar">
+    <section class="information-section hide-scrollbar">
+        <section class="individual-question hide-scrollbar">
+            <div class="section-heading-container" onkeypress="toggleAnswer('order-process-answer', 'order-process-arrow')" onclick="toggleAnswer('order-process-answer', 'order-process-arrow')" tabindex="0">
+                <h2 class="section-heading-text">What is the order process?</h2>
+                <div id="order-process-arrow" class="arrow-right"></div>
+            </div>
+            <div class="answer-text" id="order-process-answer">
+                <h4>
+                    <ol>
+                        <li>Order <a href="/pages/order.html">here</a>.</li>
+                        <li>We’ll email you a final quote and mockup of prints.</li>
+                        <li>Once order is approved, we will print a single unit for you to preview prior to printing entire order.</li>
+                        <li>We’ll notify you when the order is complete.</li>
+                        <li>Pickup, delivery, and shipping available.</li>
+                      </ol>
+                </h4>
+            </div>
+        </section>
+        <section class="individual-question">
+            <div class="section-heading-container" onkeypress="toggleAnswer('DTF-description', 'DTF-arrow')" onclick="toggleAnswer('DTF-description', 'DTF-arrow')" tabindex="0">
+                <h2 class="section-heading-text">Where do I pick up my order?</h2>
+                <div id="DTF-arrow" class="arrow-right"></div>
+            </div>
+            <div class="answer-text collapsible" id="DTF-description">
+                <h4>
+                    We do not have a storefront as we run the business out of a garage located in Lake Forest, CA. Once your order is ready, we’ll text you the address and you can come pick it up whenever is convenient for you.   
+                </h4>
+            </div>
+            
+        </section>
+        <section class="individual-question">
+            <div class="section-heading-container" onkeypress="toggleAnswer('special-effects-description', 'special-effects-arrow')" onclick="toggleAnswer('special-effects-description', 'special-effects-arrow')" tabindex="0">
+                <h2 class="section-heading-text">Do you deliver or ship?</h2>
+                <div id="special-effects-arrow" class="arrow-right"></div>
+            </div>
+            <div class="answer-text" id="special-effects-description" >
+                <h4>
+                    Yes, we deliver within Southern California. Please make sure you include your address so we can give you an accurate price. Shipping prices will be calculated and listed in your quote.
+                </h4>
+            </div>
+        </section>
+        <section class="individual-question">
+            <div class="section-heading-container" onkeypress="toggleAnswer('artwork-logo-designs-description', 'artwork-logo-designs-arrow')" onclick="toggleAnswer('artwork-logo-designs-description', 'artwork-logo-designs-arrow')" tabindex="0">
+                <h2 class="section-heading-text">Which method of printing is best for me?</h2>
+                <div id="artwork-logo-designs-arrow" class="arrow-right"></div>
+            </div>
+            <div class="answer-text" id="artwork-logo-designs-description">
+                <h4>
+                    It will depend on your graphic, needs, budget. Check out the differences <a href="/pages/services">here</a>. If you’re still unsure, message us with some information about your order and we can determine the right method for you.
+                </h4>
+            </div>
+        </section>
+        <!-- <section class="individual-question"></section> -->
+    </section>
+</section>
 </body>
 
 </html>
