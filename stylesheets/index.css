@@ -238,9 +238,9 @@ footer > .solid-button {
     z-index: 0;
   }
 
-  .jiggle {
-    /* position: absolute; */
-  }
+  /* .jiggle {
+    position: absolute;
+  } */
   
   h2 {
     font-size: 35px;
