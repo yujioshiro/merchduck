@@ -64,6 +64,7 @@ button {
     background-color: transparent;
     min-height: 3em;
     margin: 0;
+    border-top: 1px solid var(--main-font-color);
 }
 
 @media only screen and (min-width:600px) {
