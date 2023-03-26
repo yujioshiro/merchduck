@@ -86,14 +86,14 @@
       <div id="order-form-top" class="order-form-section">
         <div id="order-form-left" class="order-form-section">
 
-            <input type="text" name="name" autocomplete="name" placeholder="Name*" autofocus/>
-            <input type="email" name="email" autocomplete="email" placeholder="Email*"/>
+            <input type="text" name="name" autocomplete="name" placeholder="Name*" autofocus required/>
+            <input type="email" name="email" autocomplete="email" placeholder="Email*" required/>
             <input type="text" name="business name" placeholder="Business/Organization"/>
-            <input name="address" autocomplete="shipping street-address" placeholder="Address"/>
+            <input name="address" autocomplete="shipping street-address" placeholder="Address" required/>
   
         </div>
         <div id="order-form-right" class="order-form-section">
-          <textarea name="message" id="message-box" placeholder="Please write your question or order information here."></textarea>
+          <textarea name="message" id="message-box" placeholder="Please write your question or order information here." required></textarea>
         </div>
       </div>
       <div data-netlify-recaptcha="true"></div>
