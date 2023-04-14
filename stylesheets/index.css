@@ -88,12 +88,10 @@ h2 {
 }
 
 #hero-lower-buttons {
-  /* width: 270px; */
+  width: 270px;
   display: flex;
   flex-flow: row nowrap;
-  /* justify-content: space-between; */
-  justify-content: center;
-
+  justify-content: space-between;
 }
 
 #services-section {
@@ -262,105 +260,3 @@ footer > .solid-button {
   }
 
  }
-
-
-/* All temp animations here
-.fade-in-0-5 {
-  animation: fadeIn 0.5s;
-  -webkit-animation: fadeIn 0.5s;
-  -moz-animation: fadeIn 0.5s;
-  -o-animation: fadeIn 0.5s;
-  -ms-animation: fadeIn 0.5s;
-}
-.fade-in-1 {
-  animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -o-animation: fadeIn 1s;
-  -ms-animation: fadeIn 1s;
-}
-.fade-in-2 {
-  animation: fadeIn 2s forwards;
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  -ms-animation: fadeIn 2s;
-}
-.fade-in-3 {
-  animation: fadeIn 3s;
-  -webkit-animation: fadeIn 3s;
-  -moz-animation: fadeIn 3s;
-  -o-animation: fadeIn 3s;
-  -ms-animation: fadeIn 3s;
-}
-.fade-in-4 {
-  animation: fadeIn 4s;
-  -webkit-animation: fadeIn 4s;
-  -moz-animation: fadeIn 4s;
-  -o-animation: fadeIn 4s;
-  -ms-animation: fadeIn 4s;
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  15% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  15% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  15% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  15% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  15% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.fade-out-0-5 {
-  animation: fadeOut 0.5s;
-  -webkit-animation: fadeOut 0.5s;
-  -moz-animation: fadeOut 0.5s;
-  -o-animation: fadeOut 0.5s;
-  -ms-animation: fadeOut 0.5s;
-}
-.fade-out-1 {
-  animation: fadeOut 1s;
-  -webkit-animation: fadeOut 1s;
-  -moz-animation: fadeOut 1s;
-  -o-animation: fadeOut 1s;
-  -ms-animation: fadeOut 1s;
-}
-.fade-out-2 {
-  animation: fadeOut 2s;
-  -webkit-animation: fadeOut 2s;
-  -moz-animation: fadeOut 2s;
-  -o-animation: fadeOut 2s;
-  -ms-animation: fadeOut 2s;
-}
-@keyframes fadeOut {
-  100% { opacity: 0; }
-}
-@-moz-keyframes fadeOut {
-  100% { opacity: 0; }
-}
-@-webkit-keyframes fadeOut {
-  100% { opacity: 0; }
-}
-@-o-keyframes fadeOut {
-  100% { opacity: 0; }
-}
-@-ms-keyframes fadeOut {
-  100% { opacity: 0; }
-}
-
- */

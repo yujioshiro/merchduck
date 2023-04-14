@@ -1,11 +1,3 @@
-let adjustTopMargin = () => {
-    let firstContent = document.getElementsByClassName("first-content-after-navbar")[0];
-    let navBar = document.getElementsByTagName("nav")[0];
-    firstContent.style.marginTop = navBar.offsetHeight + "px";
-  }
-  
-adjustTopMargin();
-
 (() => {
     let footer = document.getElementsByTagName("footer")[0];
     let navBar = document.getElementsByTagName("nav")[0];
