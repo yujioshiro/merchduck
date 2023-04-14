@@ -59,17 +59,16 @@ a {
 
 nav {
   width: 100vw;
-  position: fixed;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
   top: 0;
-  z-index: 999;
   text-decoration: none;
   list-style: none;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: var(--main-background-color);
-
-  transition: background-color 2s;
 }
 
 .mobile-navbar-visible {
@@ -114,9 +113,9 @@ nav {
   height: 40vh;
 }
 
-.first-content-after-navbar {
+/* .first-content-after-navbar {
   margin-top: 53px;
-}
+} */
 
 /* Hamburger Menu CSS */
   
@@ -175,8 +174,6 @@ ul.hamburger li:nth-child(3) {
     justify-content: space-between;
     align-items: baseline;
     padding: clamp(10px, 4vh, 12px) clamp(15px, 7vw, 25px);
-
-    transition: background-color 2s;
   }
 
   .mobile-navbar-visible {
@@ -193,8 +190,7 @@ ul.hamburger li:nth-child(3) {
 
   .navbar-right {
     min-height: 30px;
-    width: 250px;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .hamburger-container {
