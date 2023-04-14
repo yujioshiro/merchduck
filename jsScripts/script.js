@@ -1,11 +1,3 @@
-let adjustTopMargin = () => {
-  let firstContent = document.getElementsByClassName("first-content-after-navbar")[0];
-  let navBar = document.getElementsByTagName("nav")[0];
-  firstContent.style.marginTop = navBar.offsetHeight + "px";
-}
-
-window.addEventListener("resize", adjustTopMargin);
-
 // This method scrolls the document to the top when a user
 // clicks on a page they are already looking at
 const scrollToTop = () => {
@@ -56,7 +48,6 @@ if ('scrollRestoration' in history) {
       }
     }
   } else {
-    stickyNavBar();
     bottomBar.classList.add("hidden");
     topBar.classList.add("rot45deg");
     middleBar.classList.add("rot-45deg");
@@ -83,26 +74,3 @@ if ('scrollRestoration' in history) {
     }
   }
 };
-
-// navbar becomes sticky as it reaches the top of the page
-let stickyNavBar = () => {
-  let navBar = document.getElementsByTagName("nav")[0];
-  let firstContent = document.getElementsByClassName("first-content-after-navbar")[0];
-  // if (scrollY > 0) {
-  //   navBar.style.position = "fixed";
-  //   if (scrollY < navBar.offsetHeight) {
-  //   firstContent.style.marginTop = navBar.offsetHeight - scrollY + "px";
-  //   }
-  // } else {
-  //   navBar.style.position = "static";
-  //   firstContent.style.marginTop = "0px";
-  // }
-}
-window.addEventListener("scroll", stickyNavBar)
-window.addEventListener("touchmove", stickyNavBar)
-
-// navbar background animation on scroll on desktop only
-let fadeNavbarBackground = () => {
-  document.getElementsByTagName("nav")[0].style.backgroundColor = "rgba(255, 248, 236, 1)"
-}
-window.addEventListener("scroll", fadeNavbarBackground)
