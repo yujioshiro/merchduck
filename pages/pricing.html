@@ -19,105 +19,156 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="merchduck business page, screen printing shirts and merchandise">
-  <link rel="stylesheet" href="../stylesheets/style.css">
-  <link rel="stylesheet" href="../stylesheets/pricing.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="194x194" href="../favicons/favicon-194x194.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="../favicons/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
-  <link rel="manifest" href="../favicons/site.webmanifest">
-  <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#ffa626">
-  <link rel="shortcut icon" href="../favicons/favicon.ico">
+  <!-- necessary meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <meta name="description" content="Printing your brand, business, or idea onto t-shirts and merchandise. Serving the nation out of Orange County, California.">
+  <meta name="theme-color" content="rgba(255,248,236,1)" />
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="194x194" href="/assets/favicons/favicon-194x194.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#ffa626">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
   <meta name="apple-mobile-web-app-title" content="merchduck">
   <meta name="application-name" content="merchduck">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="../favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
 
-  <title>merchduck</title>
+  <!-- Required CSS and JS links -->
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="../stylesheets/pricing.css">
+  <script type="text/javascript" src="../jsScripts/script.js" defer></script>
+
+  <title>merchduck - your brand on anything!</title>
 </head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWKPBQJF1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-6KWKPBQJF1');
 </script>
 
 <body>
-  <navbar>
-    <h1 id="main-name" class="navbar-item">merchduck</h1>
-    <navbuttons>
-      <!-- <a href="pages/about.html" class="navbar-item">
-        <h3>about</h3>
-      </a> -->
-      <!-- <a onclick="switchToFaq()" class="navbar-item">
-        <h3>faq</h3>
-      </a> -->
-      <a href="/pages/order-contact.html" class="navbar-item">
-        <h3>order/contact</h3>
-      </a>
-    </navbuttons>
-  </navbar>
-  <div class="landing-image-container">
-    <img class="landing-image" src="../homepage-images/merchduckScreenLossy.webp" alt="screen with merchduck logo and info" style="width:105%;height:110vh;">
-  </div>
-
-  <div class="calculator">
-    <h3>**Please note** This calculator is made to be used as a quick/rough estimate. Pricing can vary based on number of colors, size of graphic, textile material, and special inks. Please fill out the order form for an accurate quote, returned within 48 hours.</h3>
-    <div class="calculator-inputs">
-      <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="number" class="form-control" name="quantity" value="1" id="quantity">
+  <nav class="main-navbar" aria-labelledby="menu">
+    <div class="mobile-navbar-visible">
+      <ul class="navbar-left">
+        <li><a href="../" id="main-name" tabindex="0">merchduck</a></li>
+      </ul>
+      <div class="hamburger-container" onclick="toggleHamburgerMenu()" onkeypress="toggleHamburgerMenu()" tabindex="0">
+        <ul class="hamburger">
+          <li id="hamburger-top-bar"></li>
+          <li id="hamburger-middle-bar"></li>
+          <li id="hamburger-bottom-bar"></li>
+        </ul>
       </div>
+    </div>
+    <ul class="navbar-right">
+      <li class="hidden-navbar-items"><a href="../pages/services" tabindex="0">services</a></li>
+      <li class="hidden-navbar-items"><a href="../pages/faq" tabindex="0">faq</a></li>
+      <li class="hidden-navbar-items"><a href="../pages/pricing" tabindex="0">pricing</a></li>
+      <li class="hidden-navbar-items"><a href="../pages/order" tabindex="0">order</a></li>
+    </ul>
+  </nav>
 
-      <div class="form-group">
-        <label for="front-print">Front/Chest</label>
-        <input type="number" class="form-control" name="front-print" value="1" min="0" id="front-print-count">
-      </div>
-
-      <div class="form-group">
-        <label for="back-print">Back</label>
-        <input type="number" class="form-control" name="back-print" value="0" min="0" id="back-print-count">
-      </div>
-
-      <div class="form-group">
-        <label for="right-sleeve">Right Sleeve</label>
-        <input type="number" class="form-control" name="right-sleeve" value="0" min="0" id="rsleeve-print-count">
-      </div>
-
-      <div class="form-group">
-        <label for="left-sleeve">Left Sleeve</label>
-        <input type="number" class="form-control" name="left-sleeve" value="0" min="0" id="lsleeve-print-count">
-      </div>
-
-      <div class="form-group">
-        <label for="other-print">Other</label>
-        <input type="number" class="form-control" name="other-print" value="0" min="0" id="other-print-count">
-      </div>
-
-      <button type="button" name="button" id="calculate-button" onclick="calculate()">calculate</button>
+  <div class="content-container-mask first-content-after-navbar">
+    <h1>Screenprinting</h1>
+    <div class="table-container">
+      <table>
+        <!-- <thead>
+          <tr>
+            <th id="number-of-units" colspan="9"># of Units</th>
+          </tr>
+        </thead> -->
+        <tr>
+          <th></th>
+          <th>25+</th>
+          <th>50+</th>
+          <th>100+</th>
+          <th>300+</th>
+          <th>500+</th>
+          <th>1000+</th>
+        </tr>
+        <tr>
+          <td>1 Color</td>
+          <td>$10.09</td>
+          <td>$8.42</td>
+          <td>$7.58</td>
+          <td>$6.86</td>
+          <td>$6.60</td>
+          <td>$6.37</td>
+        </tr>
+        <tr>
+          <td>2 Color</td>
+          <td>$13.19</td>
+          <td>$11.08</td>
+          <td>$10.04</td>
+          <td>$9.13</td>
+          <td>$9.21</td>
+          <td>$9.11</td>
+        </tr>
+        <tr>
+          <td>3 Color</td>
+          <td>$16.23</td>
+          <td>$13.75</td>
+          <td>$12.51</td>
+          <td>$11.41</td>
+          <td>$10.97</td>
+          <td>$10.59</td>
+        </tr>
+        <tr>
+          <td>4 Color</td>
+          <td>$19.32</td>
+          <td>$16.42</td>
+          <td>$14.98</td>
+          <td>$13.68</td>
+          <td>$13.16</td>
+          <td>$12.70</td>
+        </tr>
+        <tr>
+          <td>5+ Colors</td>
+          <td colspan="6" class="final-quantity">Please fill out the order form!</td>
+        </tr>
+      </table>
     </div>
 
-    <section>
-      <h4>Total Cost</h4>
-      <h5 id="total-cost"></h5>
-    </section>
+    <h2>Direct-To-Film Transfers</h2>
+    <div class="table-container">
+      <table>
+        <!-- <thead>
+          <tr>
+            <th id="number-of-units" colspan="9"># of Units</th>
+          </tr>
+        </thead> -->
+        <tr>
+          <th></th>
+          <th>10+</th>
+        </tr>
+        <tr>
+          <td>Small Prints</td>
+          <td>$12.19</td>
+        </tr>
+        <tr>
+          <td>Large Prints</td>
+          <td>$14.92</td>
+        </tr>
+      </table>
+    </div>
+    <!-- <select name="blank-selection" id="blank-selection-dropdown">
+      <option value="No blank selected">No blank selected (displaying price of print only)</option>
+      <option value="Bella+Canvas 3333">Bella+Canvas 3333</option>
+    </select> -->
+    <p>Please note: These tables do not include the cost of the blanks. Orders that include white ink, special effects, polyester or nylon blanks, oversized graphics, or other non-standard prints may cost more. Feel free to message us your order information and we can provide you with an exact quote!</p>
   </div>
-
-  <script type="text/javascript" src="/jsScripts/script.js"></script>
-  <script type="text/javascript" src="/jsScripts/pricing-calculator.js"></script>
 </body>
 
 </html>
