@@ -2,10 +2,8 @@
 
 This site is currently being redone using Gatsby and better SEO techniques.
 
-Everything below if the old README while I work on setting up the new site.
-
-
-
+Everything below is the old README while I work on setting up the new site.
+___
 
 
 
